@@ -37,9 +37,9 @@
             
             if(isset($_POST['send'])){
             
-                $pName            = $_POST['name'];
-                $pEmail           = $_POST['email'];
-                $pDate            = $_POST['date'];            
+                $pName            = strip_tags($_POST['name']);
+                $pEmail           = strip_tags($_POST['email']);
+                $pDate            = strip_tags($_POST['date']);
             
                 if($pName && $pEmail && $pDate) {
                     $query = "INSERT INTO patients(name,email,date) VALUE('$pName ','$pEmail ','$pDate ')";
@@ -57,7 +57,6 @@
             }
 
             ?>
-
 
         </div>
     </div>
